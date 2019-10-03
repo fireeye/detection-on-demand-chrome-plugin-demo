@@ -1,0 +1,35 @@
+{
+    "name": "FireEye - Detection On Demand",
+    "description": "Allows users to submit files to FireEye cloud for analysis and show analysis results",
+    "version": "2.1.2",
+
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": "images/logo.png",
+        "default_popup": "index.html",
+        "default_title": "FireEye - Detection On Demand" 
+    },
+    "icons" : {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      },
+      "background": {
+        "scripts": ["js/background.js"]
+      },
+    "permissions": [
+        "downloads",
+        "https://feapi.marketplace.apps.fireeye.com/*",
+        "activeTab",
+        "storage",
+        "clipboardRead"
+    ],
+    "web_accessible_resources": [
+      "fonts/FontAwesome.otf",
+      "fonts/fontawesome-webfont.eot",
+      "fonts/fontawesome-webfont.svg",
+      "fonts/fontawesome-webfont.ttf",
+      "fonts/fontawesome-webfont.woff",
+      "fonts/fontawesome-webfont.woff2"
+    ]
+}

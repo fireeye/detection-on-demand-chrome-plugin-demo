@@ -1,0 +1,154 @@
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 110%;
+    margin: 5px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+.main {
+    overflow: hidden;
+    width: 400px;
+    max-height: 600px;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+#no-padding {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-image {
+    width: 40%;
+}
+
+#links {
+    overflow: auto;
+    padding: 0px;
+}
+
+.center-div {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    font-size: 150%;
+    overflow-wrap: break-word;
+}
+
+.malicious {
+    color: rgb(243, 105, 105);
+}
+
+.clean {
+    color: green;
+}
+
+.uuid_json {
+    overflow-y: auto;
+    max-height: 375px;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: monospace;
+    /* font-size: medium; */
+    background-color: rgba(197, 195, 195, 0.2);
+}
+.dl_button{
+    margin-right: 15px;
+    width: 70px;
+}
+.hash{
+    font-family: monospace;
+}
+
+.uuid{
+    font-family: monospace;
+}
+.spinner_loading{
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 15px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+.table
+{
+  max-height: 300px;
+  overflow-y: auto;
+}
+.clipboard_button
+{
+  border: 0;
+  top: .5rem;
+  z-index: 10;
+  background-color: transparent;
+  font-size: 100%;
+  float: right;
+  transition: 0.3s;
+}
+.clipboard_button:hover {
+  color: green;
+  cursor: pointer;
+}

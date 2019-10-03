@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FireEye - Detection On Demand</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap4.min.css" rel="stylesheet">
+  <link href="css/jquery.jsonPresenter.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div style="float: right;">
+    <a href="settings.html"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+  </div>
+  <div>
+    <div>
+      <img src="images/logo.png" style="height: 60px;width:60px;margin-left: 15px;float: left;margin-top: -15px">
+      <h3>FireEye - Detection On Demand</h3>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#home_tab">
+          <span class="glyphicon glyphicon-home"></span> Home
+        </a></li>
+      <li><a data-toggle="tab" href="#result_tab">
+          <span class="glyphicon glyphicon-menu-hamburger"></span> Result</a></li>
+      <li><a data-toggle="tab" href="#recent_tab" id="recent_tab_id">
+          <span class="glyphicon glyphicon-search"></span> Search</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="home_tab" class="tab-pane in active">
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-heading" style="font-size: +15px">
+              
+                  IoC found on page
+
+            </div>
+          
+          <div class="panel-body" style="overflow-y: auto;max-height: 220px;">
+            <div class="row">
+              <div class="col-8">
+                <div id="hash_holder" style="overflow-y: auto;max-height: 150px;"></div>
+              </div>
+              
+            </div>
+            <div id="parent_hash_result" style="margin-top: 10px">
+            </div>
+          </div>
+          
+        </div>
+        <!--File upload div-->
+        <div class="panel panel-default">
+          <div class="panel-heading" style="font-size: +15px">
+                
+                  Upload local file
+              
+          </div>
+
+
+          
+          <div class="panel-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="input_file">
+                <label class="custom-file-label" for="input_file">Choose file</label>
+              </div>
+            </div>
+            <div class="form-row align-items-center">
+              <div class="col-auto">
+                <button type="button" class="btn btn-success" id="submit_file">
+                  <!-- <span class="glyphicon glyphicon-floppy-save"></span> -->
+                  Submit</button>
+              </div>
+              <div class="col-auto">
+                <div class="form-check mb-2" style="margin-left: -15px;margin-top: 5px;">
+                  <label class="form-check-label" for="force" style="margin-bottom:0px">
+                    Force
+                    <label class="switch" style="margin-bottom: -5px;">
+                      <input type="checkbox" id="force">
+                      <span class="slider round"></span>
+                    </label>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div id="result" style="margin-top: 10px"></div>
+          </div>
+      
+
+
+        </div>
+      </div>
+      <!--Result tab, uuid in textbox, get result button-->
+      <div id="result_tab" class="tab-pane">
+        <div>
+          <br>
+          <div class="input-group" style="width:400px;margin-bottom: 10px;">
+            <input type="text" class="form-control" id="uuid_text" required="required" placeholder="Enter uuid">
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="button" id="uuid_search">Get Result</button>
+            </span>
+          </div>
+          <div id='uuid_result' class='uuid_json'></div>
+          <br>
+          <div id='json_download'></div>
+          <br><br>
+        </div>
+      </div>
+      <!--This is recent tab-->
+      <div id="recent_tab" class="tab-pane">
+        <div>
+          <br>
+          <div id="recent_filters">
+            <div class="container">
+              <form>
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="checkbox" id="malicious">
+                      <label class="form-check-label" for="malicious" style="margin-left: 15px">
+                        Malicious
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Limit</label>
+                    <input type="text" class="form-control mb-2" id="limit" placeholder="Limit" style="width:50px">
+                  </div>
+                  <div class="col-auto">
+                    <select class="custom-select custom-select-md form-control mb-2" id="status">
+                      <option value="any" selected>Any</option>
+                      <option value="done">Done</option>
+                      <option value="running">Running</option>
+                      <option value="failed">Failed</option>
+                    </select>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-success mb-2" id="get_submissions">Search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <hr />
+          <div id="recent_div" style="font-size: 90%;">
+          </div>
+          <div id='recent_uuid_result' class='uuid_json'></div>
+          <br>
+          <div id='json_download_recent'></div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap3.3.7.min.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/jquery.jsonPresenter.js"></script>
+</body>
+
+</html>
