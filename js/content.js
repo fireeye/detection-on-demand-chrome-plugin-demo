@@ -1,3 +1,4 @@
+/*Copyright (C) 2019 FireEye, Inc. All Rights Reserved.*/
 if (window.hasRun == undefined) {
     function get_hashes() {
         wholepage = document.body.innerText;

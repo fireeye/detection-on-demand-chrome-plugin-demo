@@ -1,3 +1,4 @@
+/*Copyright (C) 2019 FireEye, Inc. All Rights Reserved.*/
 document.getElementById('save_email').addEventListener('click', save_options);
 restore_options();
 function restore_options()

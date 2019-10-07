@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////
 // background script
 ////////////////////////////////////////////////////////
+/*Copyright (C) 2019 FireEye, Inc. All Rights Reserved.*/
 function start_getting_hash() {
     bg = chrome.extension.getBackgroundPage();
     var helperdiv = null;

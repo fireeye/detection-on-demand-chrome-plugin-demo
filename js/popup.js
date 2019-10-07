@@ -1,3 +1,4 @@
+/*Copyright (C) 2019 FireEye, Inc. All Rights Reserved.*/
 var API_KEY;
 var result_json;
 var API_URL = "https://feapi.marketplace.apps.fireeye.com";
